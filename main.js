@@ -4,6 +4,7 @@ const CONFIG = {
     currentYear: new Date().getFullYear(),
     navigation: [
         { name: 'About Me', href: 'index.html' },
+        { name: 'Experience', href: 'experience.html' },
         { name: 'Projects', href: 'projects.html' },
         { name: 'Resume', href: 'resume.html' },
         { name: 'Contact', href: 'contact.html' }
@@ -103,6 +104,8 @@ const Navigation = {
             const header = Utils.createElement('header');
             header.appendChild(this.render());
             placeholder.replaceWith(header);
+            // Progress bar (GSAP animates scaleX via ScrollTrigger)
+            document.body.appendChild(Utils.createElement('div', { className: 'progress-bar' }));
         }
     }
 };

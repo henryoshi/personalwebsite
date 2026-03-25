@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henry Shields | Experience</title>
+    <meta name="description" content="Work experience of Henry Shields — robotics software engineering at Chewy and firmware engineering at Viomerse.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Henry Shields | Experience">
+    <meta property="og:description" content="Professional work experience of Henry Shields, firmware and robotics engineer.">
+    <meta property="og:type" content="website">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="nav-placeholder"></div>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Experience</h1>
+
+                <div class="projects-container">
+
+                    <!-- ProPlay / Griffith Consulting — most recent -->
+                    <div class="project-horizontal">
+                        <div class="project-content">
+                            <div class="experience-header">
+                                <h3>ProPlay — Griffith Consulting</h3>
+                                <span class="experience-meta">Firmware Engineer (Contract) &nbsp;·&nbsp; Remote &nbsp;·&nbsp; Dec 2025 – Jan 2026</span>
+                            </div>
+
+                            <p>Through Griffith Consulting, I was contracted by ProPlay to overhaul the firmware of their self-training baseball bat — an ESP32-based IoT sports device with a multi-thousand-line C++ codebase I inherited. The bat relies on gestures for core operations: powering on and off, navigating menus through audio cues, and signaling readiness to swing. The existing code was riddled with bugs including incorrect LED driving, state machine lockups, Bluetooth communication edge case failures, and general gesture recognition inconsistency.</p>
+
+                            <p>I resolved the critical bugs across the state machine, audio playback, and battery management systems through direct client collaboration, restoring reliable device behavior. I then implemented gyroscope-accelerometer sensor fusion for the second hardware revision of the bat, which added a 6-axis IMU to replace the original 3-axis accelerometer. This fusion significantly improved gesture recognition accuracy and consistency, directly enhancing the user training experience.</p>
+
+                            <p>I also optimized power management with a motion interrupt-based wake-up system to reduce idle power draw, extending battery life between charges.</p>
+
+                            <div class="project-skills">
+                                <h4>Skills &amp; Technologies</h4>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">C/C++</span>
+                                    <span class="skill-tag">ESP32</span>
+                                    <span class="skill-tag">Firmware Development</span>
+                                    <span class="skill-tag">IMU / Sensor Fusion</span>
+                                    <span class="skill-tag">Bluetooth</span>
+                                    <span class="skill-tag">State Machines</span>
+                                    <span class="skill-tag">Power Management</span>
+                                    <span class="skill-tag">Embedded Systems</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-gallery" data-project="proplay-exp">
+                            <div class="gallery-container">
+                                <img src="assets/images/proplay/placeholder1.jpg" alt="ProPlay Image 1" class="gallery-image active">
+                                <img src="assets/images/proplay/placeholder2.jpg" alt="ProPlay Image 2" class="gallery-image">
+                                <img src="assets/images/proplay/placeholder3.jpg" alt="ProPlay Image 3" class="gallery-image">
+                                <div class="gallery-nav">
+                                    <button class="gallery-prev">&lt;</button>
+                                    <button class="gallery-next">&gt;</button>
+                                </div>
+                                <div class="gallery-dots"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chewy -->
+                    <div class="project-horizontal reverse">
+                        <div class="project-content">
+                            <div class="experience-header">
+                                <h3>Chewy</h3>
+                                <span class="experience-meta">Robotics Software Engineer I Co-op &nbsp;·&nbsp; Boston, MA &nbsp;·&nbsp; Jun – Dec 2025</span>
+                            </div>
+
+                            <p>I joined Chewy's Robotics team as a co-op in June 2025 with no prior robotics experience, and was immediately tasked with researching, designing, and implementing a humanoid robotic torso teleoperation station from scratch. Spending the first month deep in ROS2 and IsaacSim tutorials, I self-directed my onboarding to build a solid foundation before beginning development.</p>
+
+                            <p>I designed and implemented a leader-follower teleoperation system with direct firmware and software control, developing Python-based automated calibration scripts and PID-optimized arm stiffness control for real-time bimanual synchronization using custom 6-DOF scaled arm prototypes. Working closely with the mechanical engineer on the team, we produced CAD designs and iterated through multiple 3D-printed revisions to arrive at a perfectly fitted PLA arm assembly.</p>
+
+                            <p>Beyond the core teleoperation system, I engineered complete hardware integration including Dynamixel servo communications, software-based controller tuning to eliminate jitter, real-time data recording, an intuitive teleoperation GUI, and comprehensive launch automation — reducing setup time by 85%. I also developed a keyboard teleoperation system using ROS2, MoveIt, and MoveIt Servo for dual-arm UR16e control with Isaac Sim simulation, and modified the UR Driver codebase to support N concurrent robot instances for scalable dual-arm coordination.</p>
+
+                            <p>The project culminated in a live demonstration to Chewy's CEO, showcasing the successful teleoperation of two UR 6-DOF arms to gather data for a heavy deformable object dataset — enabling the team to move forward with training and evaluating physical AI models.</p>
+
+                            <div class="project-skills">
+                                <h4>Skills &amp; Technologies</h4>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">ROS2</span>
+                                    <span class="skill-tag">MoveIt</span>
+                                    <span class="skill-tag">IsaacSim</span>
+                                    <span class="skill-tag">Dynamixel Servos</span>
+                                    <span class="skill-tag">PID Control</span>
+                                    <span class="skill-tag">Teleoperation</span>
+                                    <span class="skill-tag">CAD / 3D Printing</span>
+                                    <span class="skill-tag">UR Driver</span>
+                                    <span class="skill-tag">Linux</span>
+                                </div>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="#" class="btn-outline">View on GitHub <!-- replace with repo URL --></a>
+                            </div>
+                        </div>
+                        <div class="project-gallery" data-project="chewy-exp">
+                            <div class="gallery-container">
+                                <img src="assets/images/chewy/placeholder1.jpg" alt="Chewy Robotics Image 1" class="gallery-image active">
+                                <img src="assets/images/chewy/placeholder2.jpg" alt="Chewy Robotics Image 2" class="gallery-image">
+                                <img src="assets/images/chewy/placeholder3.jpg" alt="Chewy Robotics Image 3" class="gallery-image">
+                                <div class="gallery-nav">
+                                    <button class="gallery-prev">&lt;</button>
+                                    <button class="gallery-next">&gt;</button>
+                                </div>
+                                <div class="gallery-dots"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Viomerse -->
+                    <div class="project-horizontal">
+                        <div class="project-gallery" data-project="viomerse-exp">
+                            <div class="gallery-container">
+                                <img src="assets/images/viomerse/placeholder1.jpg" alt="Viomerse Image 1" class="gallery-image active">
+                                <img src="assets/images/viomerse/placeholder2.jpg" alt="Viomerse Image 2" class="gallery-image">
+                                <img src="assets/images/viomerse/placeholder3.jpg" alt="Viomerse Image 3" class="gallery-image">
+                                <div class="gallery-nav">
+                                    <button class="gallery-prev">&lt;</button>
+                                    <button class="gallery-next">&gt;</button>
+                                </div>
+                                <div class="gallery-dots"></div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="experience-header">
+                                <h3>Viomerse Inc.</h3>
+                                <span class="experience-meta">Firmware &amp; Software Engineer &nbsp;·&nbsp; Rochester, NY &nbsp;·&nbsp; May – Dec 2024</span>
+                            </div>
+
+                            <p>In May 2024 I cold-emailed Steve Griffith, CTO of biotech startup Viomerse, and landed a role as their sole firmware engineer on the VioVision XR Display — a see-through extended reality headset designed for use in operating rooms. Joining a tight-knit team of four engineers, I inherited thousands of lines of C++ and immediately set to work implementing novel features and modes.</p>
+
+                            <p>I designed and executed new firmware features including reflashing, menuing, and calibration modes, while optimizing Flash memory utilization by 70% through refactoring and abstraction. One of my most impactful contributions was implementing a new USB-C board programming system in BSL mode — enabling non-invasive headset programming and accelerating the flashing process by 2000%, as verified by the CTO. I also engineered a complete PDM Microphone to I2S to USB-A Audio pipeline using Cypress PSoC 6 BLE, and developed local network infrastructure using NXP WiFi 6 MCUs for LAN connectivity and wireless streaming.</p>
+
+                            <p>Self-teaching Unity and C#, I built a comprehensive XR calibration wizard and in-headset HUD menu system, implementing stereoscopic calibration processes, real-time settings control, and Zoom API integration. This gave surgeons the ability to customize the headset for their individual eyes, a first for the device.</p>
+
+                            <p>I also authored a research paper on near-eye versus standard display effective resolutions, providing clinical evidence supporting the VioVision system. Due to NDA restrictions the full paper is not publicly available, but the abstract poster presented at the EAU Annual Meeting is shown below. All technical documentation was produced following ISO 13485 and IEC 62304 standards.</p>
+
+                            <div class="project-skills">
+                                <h4>Skills &amp; Technologies</h4>
+                                <div class="skills-tags">
+                                    <span class="skill-tag">C/C++</span>
+                                    <span class="skill-tag">PSoC Creator</span>
+                                    <span class="skill-tag">USB-C / BSL</span>
+                                    <span class="skill-tag">I2S / PDM</span>
+                                    <span class="skill-tag">PWM / UART</span>
+                                    <span class="skill-tag">Unity</span>
+                                    <span class="skill-tag">C#</span>
+                                    <span class="skill-tag">NXP WiFi 6</span>
+                                    <span class="skill-tag">Firmware Development</span>
+                                    <span class="skill-tag">Research &amp; Publishing</span>
+                                    <span class="skill-tag">ISO 13485 / IEC 62304</span>
+                                </div>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="assets/pdfs/EAU Poster.pdf" class="btn-outline" target="_blank">Open Poster (PDF)</a>
+                            </div>
+
+                            <div class="poster-viewer">
+                                <iframe
+                                    src="assets/pdfs/EAU Poster.pdf"
+                                    title="EAU Annual Meeting Abstract Poster"
+                                ></iframe>
+                                <p class="pdf-fallback">Can't see the poster? <a href="assets/pdfs/EAU Poster.pdf" target="_blank">Click here to open it</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+    <script src="animations.js"></script>
+</body>
+</html>

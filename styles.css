@@ -50,6 +50,25 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.28);
+}
+
+/* Scroll progress bar */
+.progress-bar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    transform-origin: left center;
+    transform: scaleX(0);
+    z-index: 999;
+    pointer-events: none;
 }
 
 .nav-container {
@@ -80,11 +99,31 @@ header {
     font-weight: 500;
     transition: color var(--transition);
     padding: 5px 10px;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background-color: var(--color-nav-hover);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.28s ease;
 }
 
 .nav-menu a:hover,
 .nav-menu a.active {
     color: var(--color-nav-hover);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 /* ============================================
@@ -134,29 +173,43 @@ h3 {
     display: flex;
     gap: 40px;
     align-items: flex-start;
-    margin-bottom: 30px;
 }
 
 .hero-text {
     flex: 1;
+    min-width: 0;
+}
+
+.hero-right {
+    flex: 0 0 400px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    gap: 24px;
 }
 
 .profile-image {
-    flex: 0 0 300px;
-    height: 450px;
+    width: 100%;
+    height: 360px;
     border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: var(--shadow-profile);
-    border: 3px solid var(--color-accent);
+    border: 3px solid transparent; /* GSAP animates this to accent on load */
 }
 
 .profile-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.hero-right .skills-overview {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.hero-right .skills-grid {
+    grid-template-columns: 1fr;
 }
 
 .intro {
@@ -451,6 +504,17 @@ h3 {
     border-radius: var(--radius-sm);
 }
 
+.poster-viewer {
+    margin-top: 24px;
+}
+
+.poster-viewer iframe {
+    width: 100%;
+    height: 600px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
 .pdf-fallback {
     margin-top: 15px;
     text-align: center;
@@ -518,6 +582,9 @@ h3 {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
+    transform: translateY(-1px);
+    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
 }
 
 /* ============================================
@@ -719,6 +786,25 @@ footer {
 }
 
 /* ============================================
+   Experience Header
+   ============================================ */
+.experience-header {
+    margin-bottom: 20px;
+    border-left: 3px solid var(--color-accent);
+    padding-left: 12px;
+}
+
+.experience-header h3 {
+    margin-bottom: 4px;
+}
+
+.experience-meta {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+/* ============================================
    Project Links
    ============================================ */
 .project-links {
@@ -764,12 +850,15 @@ footer {
 @media (max-width: 768px) {
     .hero-header {
         flex-direction: column;
-        align-items: center;
+    }
+
+    .hero-right {
+        width: 100%;
+        flex: none;
     }
 
     .profile-image {
-        flex: 0 0 250px;
-        height: 250px;
+        height: 280px;
     }
 
     .hamburger {

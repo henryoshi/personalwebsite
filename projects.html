@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Henry Shields | Projects</title>
-    <meta name="description" content="Projects by Henry Shields — extended reality firmware, humanoid robot teleoperation, ECG signal acquisition, RISC-V processor design, and more.">
+    <meta name="description" content="Projects by Henry Shields — ECG signal acquisition system, 16-bit RISC-V processor design, and more.">
     <!-- Open Graph -->
     <meta property="og:title" content="Henry Shields | Projects">
     <meta property="og:description" content="A showcase of hardware, firmware, and robotics engineering projects by Henry Shields.">
@@ -25,155 +25,9 @@
                 <h1>My Projects</h1>
                                 
                 <div class="projects-container">
-                    <!-- Project 1: Viomerse - Images on RIGHT -->
-                    <div class="project-horizontal">
-                        <div class="project-content">
-                            <h3>Viomerse</h3>
-                            <p>In May 2024, I cold-emailed Steve Griffith, CTO of the biotech startup Viomerse, introducing myself and asking if I could assist with that summer. Immediately, he demonstrated the project they were working on, an extended reality headset for use in operating rooms. The device has see-through optics that allow you to overlay information on the real world without impairing your vision when disabled.</p>
-                            
-                            <p>I immediately was thrilled with the fast-paced energy around my assignments. Viomerse's engineering staff was tight knit, the team composed of one software engineer, one mechanical engineer, one electrical engineer, and myself, the firmware engineer. I inherited thousands of lines of C code and set to work immediately implementing novel features and modes for their headset. This saw me investigating UART communications for new pieces of hardware to be integrated. Taking the oscilloscope to individual CPU pins to debug the system. Writing to registers to allow creating custom offsets in each eye allowing for the first calibration methods.</p>
-                            
-                            <p>Not all firmware involved that codebase however. One project had me setting up the full PDM microphone to serial audio device system for the headset, and was shortly implemented. I explored PWM signals in creating firmware for the new version of the headset's headlamp in PSoC Creator. I developed a new board programming protocol that works through USB-C rather than JTAG that vastly increased user experience and will significantly aid any CICD efforts in the future. A fourth I developed a Unity App with C# to perform calibration on the headset, guiding the user through a custom process and allowing presets for the headset to account for different users eyes. Furthermore, I was able to add new functionality to Viomerse's custom beltpack for menuing, calibration, and laser control.</p>
-                            
-                            <p>The accomplishment I am most proud of however, is publishing a research paper on near eye optics compared with standard medical imaging displays, providing doctors evidence that using our device would greatly enhance their experience. This paper was then presented at the AUA Annual Meeting, unfortunately after I returned to school, but proved well received by the audience.</p>
-                            
-                            <div class="project-skills">
-                                <h4>Skills & Technologies</h4>
-                                <div class="skills-tags">
-                                    <span class="skill-tag">C</span>
-                                    <span class="skill-tag">Firmware Development</span>
-                                    <span class="skill-tag">UART</span>
-                                    <span class="skill-tag">PWM</span>
-                                    <span class="skill-tag">PSoC Creator</span>
-                                    <span class="skill-tag">Unity</span>
-                                    <span class="skill-tag">C#</span>
-                                    <span class="skill-tag">USB-C Protocol</span>
-                                    <span class="skill-tag">Hardware Debugging</span>
-                                    <span class="skill-tag">Research & Publishing</span>
-                                </div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="btn-outline">View Paper <!-- replace with actual paper URL --></a>
-                            </div>
-                        </div>
-                        <div class="project-gallery" data-project="viomerse">
-                            <div class="gallery-container">
-                                <img src="assets/images/viomerse/placeholder1.jpg" alt="Viomerse Project Image 1" class="gallery-image active">
-                                <img src="assets/images/viomerse/placeholder2.jpg" alt="Viomerse Project Image 2" class="gallery-image">
-                                <img src="assets/images/viomerse/placeholder3.jpg" alt="Viomerse Project Image 3" class="gallery-image">
-                                <div class="gallery-nav">
-                                    <button class="gallery-prev">&lt;</button>
-                                    <button class="gallery-next">&gt;</button>
-                                </div>
-                                <div class="gallery-dots"></div>
-                            </div>
-                        </div>  
-                    </div>
-                    
-                    <!-- Project 2: Chewy - Images on LEFT -->
-                    <div class="project-horizontal reverse">
-                        <div class="project-gallery" data-project="chewy">
-                            <div class="gallery-container">
-                                <img src="assets/images/chewy/placeholder1.jpg" alt="Chewy Project Image 1" class="gallery-image active">
-                                <img src="assets/images/chewy/placeholder2.jpg" alt="Chewy Project Image 2" class="gallery-image">
-                                <img src="assets/images/chewy/placeholder3.jpg" alt="Chewy Project Image 3" class="gallery-image">
-                                <div class="gallery-nav">
-                                    <button class="gallery-prev">&lt;</button>
-                                    <button class="gallery-next">&gt;</button>
-                                </div>
-                                <div class="gallery-dots"></div>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Chewy</h3>
-                            <p>I joined Chewy's Robotics team as a co-op in June 2025, with absolutely no knowledge in robotics. I was tasked to research, design, and implement a humanoid robotic torso teleoperation station. Teleoperation is just a fancy word for humans remotely operating the device.</p>
-                            
-                            <p>During the first month I spent hours digging through ROS2 and IsaacSim tutorials, self-directing my onboarding to gain a fundamental understanding how code and robotic operating systems interact. I then began research on teleoperation, creating a table on how accurate, accessible, and affordable each method would be, culminating in the presentation of a leader-follower model. This would have a teleoperator, someone controlling the robot, move a scaled down and kinematically identical version of the "follower", mimicking the operator's "leader" arms.</p>
-                            
-                            <p>Building out a Bill of Materials and researching hardware, I bought the servos, cables, USB communicators, and power supplies necessary to construct our very own 3D printer leader-follower setup. To accomplish this I needed help, so working with our team's mechanical engineer we created CAD designs and sent them to print. Each print threw a new obstacle, but eventually with a perfectly fitted PLA arm, I assembled the arms and created a new company repository to set up the code base.</p>
-                            
-                            <p>I implemented position and velocity controllers, to varying degrees of success as I learned what makes a good control policy, calibration protocols, Dynamixel servo communications, custom ROS2 nodes, and MoveIt integration.</p>
-                            
-                            <p>This success culminated in a demonstration to the CEO of Chewy, explaining and showing the successful leading of two UR 6-DOF arms to gather data for the heavy deformable dataset. Now we can move forward with quality, precise data to build and test physical AI models, or simply release for external vendors to train their own robots.</p>
-                            
-                            <div class="project-skills">
-                                <h4>Skills & Technologies</h4>
-                                <div class="skills-tags">
-                                    <span class="skill-tag">ROS2</span>
-                                    <span class="skill-tag">IsaacSim</span>
-                                    <span class="skill-tag">Robotics</span>
-                                    <span class="skill-tag">Teleoperation</span>
-                                    <span class="skill-tag">Dynamixel Servos</span>
-                                    <span class="skill-tag">MoveIt</span>
-                                    <span class="skill-tag">Control Systems</span>
-                                    <span class="skill-tag">CAD Design</span>
-                                    <span class="skill-tag">3D Printing</span>
-                                    <span class="skill-tag">Python</span>
-                                </div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="btn-outline">View on GitHub <!-- replace with repo URL --></a>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Project 3: ProPlay - Images on RIGHT -->
+                    <!-- Project 1: ECG Signal Processing - Images on RIGHT -->
                     <div class="project-horizontal">
-                        <div class="project-content">
-                            <h3>ProPlay</h3>
-                            <p>ProPlay needed bug fixes, new bluetooth commands, and novel firmware for their gyroscope. From December 2025 to January 2026, I worked with Griffith Consulting to deliver a myriad of changes in the multi-thousand line C codebase I inherited.</p>
-                            
-                            <p>Furthermore, the code I inherited was riddled with bugs, including incorrect LED driving, state machine lock up, Bluetooth communication edge case failures, and general stubbornness when attempting a gesture.</p>
-                            
-                            <p>The self-training baseball bat uses gestures for crucial operations such as powering on and off, interacting with menus through audio queues, and indicating you are ready to swing, to name a few. When I started in December 2025, the device only contained a 3-axis accelerometer, but for the second version of their bat, they were looking to integrate a 6-axis imu with not just an accelerometer, but a gyroscope.</p>
-                            
-                            <div class="project-skills">
-                                <h4>Skills & Technologies</h4>
-                                <div class="skills-tags">
-                                    <span class="skill-tag">C</span>
-                                    <span class="skill-tag">Firmware Development</span>
-                                    <span class="skill-tag">Bluetooth</span>
-                                    <span class="skill-tag">IMU Integration</span>
-                                    <span class="skill-tag">State Machines</span>
-                                    <span class="skill-tag">LED Control</span>
-                                    <span class="skill-tag">Gyroscope</span>
-                                    <span class="skill-tag">Accelerometer</span>
-                                    <span class="skill-tag">Bug Fixing</span>
-                                    <span class="skill-tag">Embedded Systems</span>
-                                </div>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" class="btn-outline">View on GitHub <!-- replace with repo URL --></a>
-                            </div>
-                        </div>
-                        <div class="project-gallery" data-project="proplay">
-                            <div class="gallery-container">
-                                <img src="assets/images/proplay/placeholder1.jpg" alt="ProPlay Project Image 1" class="gallery-image active">
-                                <img src="assets/images/proplay/placeholder2.jpg" alt="ProPlay Project Image 2" class="gallery-image">
-                                <img src="assets/images/proplay/placeholder3.jpg" alt="ProPlay Project Image 3" class="gallery-image">
-                                <div class="gallery-nav">
-                                    <button class="gallery-prev">&lt;</button>
-                                    <button class="gallery-next">&gt;</button>
-                                </div>
-                                <div class="gallery-dots"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 4: ECG Signal Processing - Images on LEFT -->
-                    <div class="project-horizontal reverse">
-                        <div class="project-gallery" data-project="ecg">
-                            <div class="gallery-container">
-                                <img src="assets/images/ecg/placeholder1.jpg" alt="ECG Project Image 1" class="gallery-image active">
-                                <img src="assets/images/ecg/placeholder2.jpg" alt="ECG Project Image 2" class="gallery-image">
-                                <img src="assets/images/ecg/placeholder3.jpg" alt="ECG Project Image 3" class="gallery-image">
-                                <div class="gallery-nav">
-                                    <button class="gallery-prev">&lt;</button>
-                                    <button class="gallery-next">&gt;</button>
-                                </div>
-                                <div class="gallery-dots"></div>
-                            </div>
-                        </div>
                         <div class="project-content">
                             <h3>ECG Signal Acquisition and Processing System</h3>
                             <p>During the spring of 2024, I took on the challenge of designing and building a complete ECG data acquisition system from the ground up. The project demanded a deep understanding of both analog circuit design and digital signal processing to create a system capable of capturing the subtle electrical signals generated by the human heart.</p>
@@ -202,18 +56,42 @@
                                 <a href="#" class="btn-outline">View Report <!-- replace with report URL --></a>
                             </div>
                         </div>
+                        <div class="project-gallery" data-project="ecg">
+                            <div class="gallery-container">
+                                <img src="assets/images/ecg/placeholder1.jpg" alt="ECG Project Image 1" class="gallery-image active">
+                                <img src="assets/images/ecg/placeholder2.jpg" alt="ECG Project Image 2" class="gallery-image">
+                                <img src="assets/images/ecg/placeholder3.jpg" alt="ECG Project Image 3" class="gallery-image">
+                                <div class="gallery-nav">
+                                    <button class="gallery-prev">&lt;</button>
+                                    <button class="gallery-next">&gt;</button>
+                                </div>
+                                <div class="gallery-dots"></div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Project 5: RISC-V Processor - Images on RIGHT -->
-                    <div class="project-horizontal">
+                    <!-- Project 2: RISC-V Processor - Images on LEFT -->
+                    <div class="project-horizontal reverse">
+                        <div class="project-gallery" data-project="riscv">
+                            <div class="gallery-container">
+                                <img src="assets/images/riscv/placeholder1.jpg" alt="RISC-V Project Image 1" class="gallery-image active">
+                                <img src="assets/images/riscv/placeholder2.jpg" alt="RISC-V Project Image 2" class="gallery-image">
+                                <img src="assets/images/riscv/placeholder3.jpg" alt="RISC-V Project Image 3" class="gallery-image">
+                                <div class="gallery-nav">
+                                    <button class="gallery-prev">&lt;</button>
+                                    <button class="gallery-next">&gt;</button>
+                                </div>
+                                <div class="gallery-dots"></div>
+                            </div>
+                        </div>
                         <div class="project-content">
                             <h3>16-bit RISC-V Processor Design</h3>
                             <p>From February to April 2024, I undertook one of the most challenging and rewarding projects of my academic career: designing and implementing a fully functional 16-bit RISC-V processor from scratch. This project gave me hands-on experience with the fundamental concepts of computer architecture and digital design that power every computing device.</p>
-                            
+
                             <p>Using SystemVerilog HDL in Xilinx Vivado, I constructed each component of the processor individually before integrating them into a cohesive system. The 16-bit arithmetic logic unit formed the computational heart of the processor, capable of performing essential operations including addition, subtraction, logical operations, and comparisons. I designed a register file to provide fast storage for operands and results, along with separate instruction and data memory modules to follow the Harvard architecture model.</p>
-                            
+
                             <p>Perhaps the most intricate aspect was developing the control logic that orchestrates the entire system. This finite state machine decoded instructions, generated appropriate control signals for each pipeline stage, and coordinated data movement between components. Watching the processor successfully execute programs I wrote in RISC-V assembly was incredibly satisfying and gave me a profound appreciation for the elegance of computer architecture. The project culminated in a working processor capable of running basic programs and performing computational tasks.</p>
-                            
+
                             <div class="project-skills">
                                 <h4>Skills & Technologies</h4>
                                 <div class="skills-tags">
@@ -231,18 +109,6 @@
                             </div>
                             <div class="project-links">
                                 <a href="#" class="btn-outline">View on GitHub <!-- replace with repo URL --></a>
-                            </div>
-                        </div>
-                        <div class="project-gallery" data-project="riscv">
-                            <div class="gallery-container">
-                                <img src="assets/images/riscv/placeholder1.jpg" alt="RISC-V Project Image 1" class="gallery-image active">
-                                <img src="assets/images/riscv/placeholder2.jpg" alt="RISC-V Project Image 2" class="gallery-image">
-                                <img src="assets/images/riscv/placeholder3.jpg" alt="RISC-V Project Image 3" class="gallery-image">
-                                <div class="gallery-nav">
-                                    <button class="gallery-prev">&lt;</button>
-                                    <button class="gallery-next">&gt;</button>
-                                </div>
-                                <div class="gallery-dots"></div>
                             </div>
                         </div>
                     </div>
