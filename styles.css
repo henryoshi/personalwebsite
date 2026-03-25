@@ -202,15 +202,6 @@ h3 {
     object-fit: cover;
 }
 
-.hero-right .skills-overview {
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
-}
-
-.hero-right .skills-grid {
-    grid-template-columns: 1fr;
-}
 
 .intro {
     font-size: 1.2rem;
